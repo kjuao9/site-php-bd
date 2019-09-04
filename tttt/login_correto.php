@@ -77,13 +77,15 @@
 		</div>
 		<div id="postagem" class="clear">
 			<?php print"Hoje é ".date("d/M/Y").", horário atual: ".date("H:i");
-			foreach ($mensagens as $mensagem) {
-				print "<div id='postagem' class='clear'>";
-				print "<span class='italico'>".$mensagem["data_formatada"]."</span>";
-				print "<br><span class='negrito-maior'>".$_SESSION['nome']."</span>";
-				print "<br/>".$mensagem["texto_postagem"];
-				print "</div>";
-			}
+$mensagens = listar_mensagens3($con, $id_usuario);
+foreach ($mensagens as $mensagem) {
+	print "<div id='postagem' class='clear'>";
+	print "<span class='italico'>".$mensagem["data_formatada"]."</span>";
+	print "<br><span class='negrito-maior'>".$mensagem['nome']."</span>";
+	print "<br/>".$mensagem["texto_postagem"];
+	print "</div>";
+	}
+			
 			?>
 		</div>
 	</div> <!--  Div Área principal  -->

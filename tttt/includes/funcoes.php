@@ -78,4 +78,21 @@
     return $mensagens;
   };
 
+  function listar_mensagens3($con,$id_usuario)
+  {
+    $sql = "SELECT u.nome, p.texto_postagem, date_format(p.data_inclusao, '%d %b %Y, %T') as data_formatada
+    FROM postagem as p join usuarios as u on (u.codigo=p.id_usuario)
+    where id_usuario=$id_usuario
+    or id_usuario in (SELECT seguindo_id_usuario from usuarios_seguidores where id_usuario = $id_usuario)
+    order by p.data_inclusao desc";
+    $resultado = mysqli_query($con,$sql);
+    if($resultado){
+      $mensagens = array();
+      while($linha = mysqli_fetch_assoc($resultado)){
+        $mensagens[] =$linha;
+      }
+    }
+    return $mensagens;
+  };
+
   ?>
