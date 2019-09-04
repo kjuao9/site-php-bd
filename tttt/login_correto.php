@@ -36,7 +36,17 @@
 						
 						 ?>
 						 </td>
-						<td width="100px">SEGUIDORES <br/> 0</td>
+						<td width="100px">SEGUIDORES <br/><?php $sql = "SELECT id_usuario from usuarios_seguidores
+						where id_usuario=$id_usuario";
+						$result = mysqli_query($con, $sql);
+						if($result){
+							$seg = array();
+							while($abc = mysqli_fetch_assoc($result)){
+								$seg[] = $abc;
+							}
+							print count($seg);
+						}
+						 ?></td>
 					</tr>
 				</table>
 		</div>
