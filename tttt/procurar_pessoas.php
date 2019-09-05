@@ -31,6 +31,7 @@
 			</form>
 		</div>
 		<?php
+		//código para procurar usuários aqui
 		function verificar_se_seguidor($con, $codigo_usuario, $codigo_usuario_seguindo){
 			//a consulta abaixo verifica se os dois usuario ká são amigos
 			$sql = "SELECT * FROM usuarios_seguidores
@@ -50,8 +51,6 @@
 						</span>";
 			}
 		}
-
-		//código para procurar usuários aqui
 		include_once "conexao.php";
 		if( isset($_POST['nome']) ){
 			$nome_usuario = $_POST['nome'];

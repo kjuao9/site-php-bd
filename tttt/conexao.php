@@ -1,8 +1,8 @@
 <?php
 function conecta_mysql(){
 	$host = "localhost";
-	$usuario = "root";
-	$senha = "";
+	$usuario = "phpmyadmin";
+	$senha = "root";
 	$nome_bd = "php2019";
 
 	$conexao = mysqli_connect($host,$usuario,$senha,$nome_bd);

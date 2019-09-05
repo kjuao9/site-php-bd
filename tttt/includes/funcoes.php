@@ -1,5 +1,4 @@
 <?php
-
   function bomdia() {
     $ola = date("H");
     if ( ($ola >=18 and $ola <=23) or ($ola >= 0 and $ola <3)){
@@ -12,7 +11,6 @@
       return "Boa Tarde!";
     }
   }
-
   function maiusculo($string){
     $string = strtoupper ($string);
     $string = str_replace ("á","Á",$string);
@@ -32,7 +30,6 @@
     $string = str_replace ("à","À",$string);
     return $string;
   }
-
   function verificar_email($con, $email){
     $sql = "SELECT email FROM usuarios WHERE email = '$email'";
     $resultado = mysqli_query($con, $sql);
@@ -47,7 +44,6 @@
       return true;
     }
   }
-
   function listar_mensagens($con,$id_usuario)
   {
     $sql = "SELECT texto_postagem, date_format(data_inclusao, '%d %b %Y, %T') as data_formatada
@@ -62,7 +58,6 @@
     }
     return $mensagens;
   };
-
   function listar_mensagens2($con,$id_usuario)
   {
     $sql = "SELECT * From postagem 
@@ -77,7 +72,6 @@
     }
     return $mensagens;
   };
-
   function listar_mensagens3($con,$id_usuario)
   {
     $sql = "SELECT u.nome, p.texto_postagem, date_format(p.data_inclusao, '%d %b %Y, %T') as data_formatada
@@ -94,5 +88,4 @@
     }
     return $mensagens;
   };
-
   ?>

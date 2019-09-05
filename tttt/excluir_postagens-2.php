@@ -44,6 +44,6 @@
 
 		//Código para excluir a ensagem pelo id aqui
 		?>
-	</div> <!-- Div Área principal -->
+		</div> <!-- Div Área principal -->
 </body>
 </html>

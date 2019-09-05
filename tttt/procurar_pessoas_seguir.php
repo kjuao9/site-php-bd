@@ -26,7 +26,7 @@
 				include_once "conexao.php";
 				$conexao = conecta_mysql();
 				$sql = "INSERT INTO usuarios_seguidores (id_usuario, seguindo_id_usuario)
-				values ('$id_usuario','$id_usuario_seguir')";
+				values ($id_usuario,$id_usuario_seguir)";
 				$resultado = mysqli_query($conexao,$sql);
 				if($resultado){
 					print "Agora você está seguindo este usuário";

@@ -77,7 +77,6 @@
 				}
 			}
 		}
-
 			?>
 		</div>
 		<div id="div-procurar-pessoa" class="borda-arredondada">
